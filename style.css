@@ -1,0 +1,162 @@
+:root{
+    --fc-header: hsla(0, 0%, 100%, 1);
+    --fc-footer: hsla(232, 17%, 35%, 1);
+
+    --ff-heading: 'Staatliches', cursive;
+    --ff-header: 'Roboto', sans-serif;
+    --ff-footer: 'Open Sans', sans-serif;
+
+    --bc-header:hsla(218, 17%, 62%, 1);
+    --bc-heading: hsla(275, 18%, 79%, 1);
+
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    animation: topdown 700ms;
+}
+
+header{
+    background-color: var(--bc-header);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 37.7rem;
+
+    color: var(--fc-header);
+    align-items: center;
+    gap: 4rem;
+
+}
+
+header:hover{
+    background-color: rgb(104, 70, 124);
+}
+
+header h1{
+    font-family: var(--ff-heading);
+    font-size: 4.8rem;
+
+    background-color: var(--bc-heading);
+    width: 100%;
+    text-align: center;
+}
+
+header p {
+    font-family: var(--ff-header);
+    font-size: 1.2rem;
+
+    width: 27.5rem;
+    height: 26.2rem;
+    text-align: center;
+    line-height: 2rem; 
+}
+
+
+.right{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    padding: 6.4rem 9.8rem 0;
+}
+
+.grid-wrapper {
+    display: grid;    
+    gap: 3.2rem;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    
+    grid-template-areas: "A B E"
+    "D B F"
+    "D C F";
+}
+
+
+#item-1{
+    grid-area: A;
+}
+#item-2{
+    grid-area: B;
+}
+#item-3{
+    grid-area: C;
+}
+#item-4{
+    grid-area: D;
+}
+#item-5{
+    grid-area: E;
+}
+#item-6{
+    grid-area: F;
+}
+
+
+.grid-wrapper img{
+    width: 22rem;
+    height: auto;
+    border-radius: 20px;
+}
+
+.grid-wrapper img:hover{
+    filter: opacity(0.7);
+    filter: grayscale(0.9);
+}
+
+footer{
+    font-family: var(--ff-footer);
+    color: var(--fc-footer);
+
+    margin-top: 5rem;
+    font-size: 1.4rem;
+
+    animation: downtop 700ms;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--fc-footer);
+}
+
+footer a:hover{
+    color: var(--bc-heading);
+    font-weight: bold;
+}
+
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
